@@ -33,3 +33,7 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# IntelliJ
+.idea/tasks.xml
+.idea/workspace.xml
