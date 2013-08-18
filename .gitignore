@@ -37,3 +37,6 @@ nosetests.xml
 # IntelliJ
 .idea/tasks.xml
 .idea/workspace.xml
+
+# Mac noise
+.DS_Store

@@ -9,7 +9,7 @@ def main():
     base_dir = dirname(__file__)
     setup(
         name='rotunicode',
-        version='0.1.0',
+        version='0.1.1',
         description='RotUnicode',
         long_description=open(join(base_dir, 'README.rst')).read(),
         author='Kunal Parmar',
