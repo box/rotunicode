@@ -26,7 +26,7 @@ class RotUnicode(codecs.Codec):
     Hello Frodo!
     """
     # pylint: disable=W0232
-    # Disable: class has no __init__ method. The base class does not define one.
+    # Disable: class has no __init__ method. The base class does not define it.
 
     _codec_name = 'rotunicode'
 
