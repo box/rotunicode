@@ -15,7 +15,7 @@ def main():
         author='Kunal Parmar',
         author_email='kunalparmar@gmail.com',
         url='https://pypi.python.org/pypi/rotunicode',
-        license='Apache License 2.0',
+        license=open(join(base_dir, 'LICENSE')).read(),
         packages=find_packages(exclude=['test']),
         namespace_packages=[b'box'],
         test_suite='test',
