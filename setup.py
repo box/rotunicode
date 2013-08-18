@@ -6,14 +6,16 @@ from os.path import dirname, join
 
 
 def main():
+    base_dir = dirname(__file__)
     setup(
         name='rotunicode',
         version='0.1.0',
         description='RotUnicode',
-        long_description=open(join(dirname(__file__), 'README.md')).read(),
+        long_description=open(join(base_dir, 'README.md')).read(),
         author='Kunal Parmar',
         author_email='kunalparmar@gmail.com',
-        url='pypi.python.org/pypi/rotunicode',
+        url='https://pypi.python.org/pypi/rotunicode',
+        license='Apache License 2.0',
         packages=find_packages(exclude=['test']),
         namespace_packages=[b'box'],
         test_suite='test',
