@@ -11,7 +11,7 @@ def main():
         name='rotunicode',
         version='0.1.0',
         description='RotUnicode',
-        long_description=open(join(base_dir, 'README.md')).read(),
+        long_description=open(join(base_dir, 'README.rst')).read(),
         author='Kunal Parmar',
         author_email='kunalparmar@gmail.com',
         url='https://pypi.python.org/pypi/rotunicode',
