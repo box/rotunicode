@@ -1,11 +1,14 @@
 rotunicode
 ==========
 
-.. image:: https://badge.fury.io/py/rotunicode.png
-    :target: http://badge.fury.io/py/rotunicode
-
 .. image:: https://travis-ci.org/box/rotunicode.png?branch=master
     :target: https://travis-ci.org/box/rotunicode
+
+.. image:: https://pypip.in/v/rotunicode/badge.png
+    :target: https://crate.io/packages/rotunicode
+
+.. image:: https://pypip.in/d/rotunicode/badge.png
+    :target: https://crate.io/packages/rotunicode
 
 RotUnicode is a Python codec that can convert a string of ASCII characters to
 a Unicode string with non-ASCII characters maintaining readability.
