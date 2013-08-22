@@ -15,7 +15,7 @@ def main():
         long_description=open(join(base_dir, 'README.rst')).read(),
         author='Kunal Parmar',
         author_email='kunalparmar@gmail.com',
-        url='https://pypi.python.org/pypi/rotunicode',
+        url='https://github.com/box/rotunicode',
         license=open(join(base_dir, 'LICENSE')).read(),
         packages=find_packages(exclude=['test']),
         namespace_packages=[b'box'],
