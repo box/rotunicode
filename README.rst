@@ -24,8 +24,7 @@ a Unicode string with non-ASCII characters maintaining readability.
 
 
 RotUnicode is extremely helpful in testing your application because it makes it
-easy to create strings with non-ASCII characters. Here's a bug discovered while
-I was using rotunicode -
+easy to create strings with non-ASCII characters. Example -
 
 .. code-block:: pycon
 
