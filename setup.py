@@ -10,7 +10,8 @@ def main():
     setup(
         name='rotunicode',
         version='0.1.2',
-        description='RotUnicode',
+        description='Python codec for converting between a string of ASCII '
+                    'and Unicode chars maintaining readability',
         long_description=open(join(base_dir, 'README.rst')).read(),
         author='Kunal Parmar',
         author_email='kunalparmar@gmail.com',

@@ -10,20 +10,14 @@ class RotUnicode(codecs.Codec):
     Codec for converting between a string of ASCII and Unicode chars
     maintaining readability.
 
-    RotUnicode stands for rotate-to-unicode or rotten-unicode :). Use it as
-    follows -
-    >>> rot_unicode = RotUnicode()
-    >>> rot_unicode.encode('Hello Frodo!')
-    Ĥȅľľő Ƒŕőďő!
-    >>> rot_unicode.decode('Ĥȅľľő Ƒŕőďő!')
-    Hello Frodo!
-
-    You can also register :meth:`search_function` and use as follows -
     >>> codes.register(RotUnicode.search_function)
     >>> 'Hello Frodo!'.encode('rotunicode')
     Ĥȅľľő Ƒŕőďő!
     >>> 'Ĥȅľľő Ƒŕőďő!'.decode('rotunicode')
     Hello Frodo!
+
+    RotUnicode stands for rotate-to-unicode. Or rotten-unicode for those who
+    have nightmares about Unicode. It was inspired by Rot13.
     """
     # pylint: disable=W0232
     # Disable: class has no __init__ method. The base class does not define it.
