@@ -8,8 +8,12 @@ from box.util.rotunicode import RotUnicode
 
 
 class RotUnicodeTest(TestCase):
+    """Tests for :mod:`box.util.rotunicode.rotunicode`."""
 
-    codecs.register(RotUnicode.search_function)
+    @classmethod
+    def setUpClass(cls):
+        super(RotUnicodeTest, cls).setUpClass()
+        codecs.register(RotUnicode.search_function)
 
     def test_encoder_is_searchable_by_name(self):
         encoder = codecs.getencoder('rotunicode')
