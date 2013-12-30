@@ -4,6 +4,9 @@ rotunicode
 .. image:: https://travis-ci.org/box/rotunicode.png?branch=master
     :target: https://travis-ci.org/box/rotunicode
 
+.. image:: https://coveralls.io/repos/box/rotunicode/badge.png
+    :target: https://coveralls.io/r/box/rotunicode
+
 .. image:: https://pypip.in/v/rotunicode/badge.png
     :target: https://crate.io/packages/rotunicode
 
