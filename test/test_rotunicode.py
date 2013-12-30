@@ -23,6 +23,25 @@ class RotUnicodeTest(TestCase):
         decoder = codecs.getdecoder('rotunicode')
         self.assertIsNotNone(decoder)
 
+    def test_search_function_returns_none_for_non_rotunicode_encoding(self):
+        self.assertIsNone(RotUnicode.search_function('random'))
+
+    def test_encoding_using_unsupported_error_types_raise_exception(self):
+        with self.assertRaises(UnicodeError):
+            'Hello World!'.encode('rotunicode', 'ignore')
+        with self.assertRaises(UnicodeError):
+            'Hello World!'.encode('rotunicode', 'replace')
+        with self.assertRaises(UnicodeError):
+            'Hello World!'.encode('rotunicode', 'xmlcharrefreplace')
+
+    def test_decoding_using_unsupported_error_types_raise_exception(self):
+        with self.assertRaises(UnicodeError):
+            'Hello World!'.decode('rotunicode', 'ignore')
+        with self.assertRaises(UnicodeError):
+            'Hello World!'.decode('rotunicode', 'replace')
+        with self.assertRaises(UnicodeError):
+            'Hello World!'.decode('rotunicode', 'xmlcharrefreplace')
+
     def test_encoding_zero_length_byte_string_returns_zero_length_unicode_string(self):
         self.assertEqual(
             '',
