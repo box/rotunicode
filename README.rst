@@ -41,7 +41,7 @@ easy to create strings with non-ASCII characters. Example -
     UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-2:
     ordinal not in range(128)
 
-The bug is filed at http://bugs.python.org/issue18695.
+This bug is filed at http://bugs.python.org/issue18695.
 
 
 Supported Characters
@@ -53,10 +53,10 @@ outside this range are left as is.
 
 .. code-block:: pycon
 
-    >>> 'हिन्दी'.encode('rotunicode')
-    हिन्दी
-    >>> 'हिन्दी'.decode('rotunicode')
-    हिन्दी
+    >>> 'हेलो World!'.encode('rotunicode')
+    हेलो Ŵőŕľď!
+    >>> 'हेलो Ŵőŕľď!'.decode('rotunicode')
+    हेलो World!
 
 
 Installation
