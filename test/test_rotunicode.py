@@ -66,3 +66,27 @@ class RotUnicodeTest(TestCase):
             'Hello World!',
             'Ĥȅľľő Ŵőŕľď!'.decode('rotunicode'),
         )
+
+    def test_encoding_byte_string_with_unsupported_chars_returns_unicode_string_with_unsupported_chars_unchanged(self):
+        self.assertEqual(
+            'हेलो Ŵőŕľď!',
+            b'हेलो World!'.encode('rotunicode'),
+        )
+
+    def test_encoding_unicode_string_with_unsupported_chars_returns_unicode_string_with_unsupported_chars_unchanged(self):
+        self.assertEqual(
+            'हेलो Ŵőŕľď!',
+            'हेलो World!'.encode('rotunicode'),
+        )
+
+    def test_decoding_byte_string_with_unsupported_chars_returns_unicode_string_with_unsupported_chars_unchanged(self):
+        self.assertEqual(
+            'हेलो World!',
+            b'हेलो Ŵőŕľď!'.decode('rotunicode'),
+        )
+
+    def test_decoding_unicode_string_with_unsupported_chars_returns_unicode_string_with_unsupported_chars_unchanged(self):
+        self.assertEqual(
+            'हेलो World!',
+            'हेलो Ŵőŕľď!'.decode('rotunicode'),
+        )
