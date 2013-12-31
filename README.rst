@@ -69,7 +69,7 @@ To install, simply:
 
 .. code-block:: bash
 
-    $ pip install requests
+    $ pip install rotunicode
 
 
 Why is this named RotUnicode?
