@@ -1,3 +1,4 @@
 coveralls
 pep8
 pylint
+tox

@@ -1,11 +1,14 @@
 language: python
-python:
-  - "2.7"
-# command to install dependencies
+env:
+  - TOX_ENV=py27
+  - TOX_ENV=pep8
+  - TOX_ENV=pylint
+  - TOX_ENV=coverage
+# commands to install dependencies
 install:
-  - pip install -r requirements-dev.txt --use-mirrors
-# command to run tests
+  - pip install tox --use-mirrors
+# commands to run
 script:
-  - coverage run setup.py test
+  - tox -e $TOX_ENV
 after_success:
-  - coveralls
+  - if [ "-x$TOX_ENV" = "xcoverage" ]; then coveralls; fi
