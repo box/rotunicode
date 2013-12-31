@@ -4,17 +4,19 @@ from __future__ import unicode_literals
 from setuptools import setup, find_packages
 from os.path import dirname, join
 
+from box.util.rotunicode import __version__, __author__, __email__
+
 
 def main():
     base_dir = dirname(__file__)
     setup(
         name='rotunicode',
-        version='0.1.5',
+        version=__version__,
         description='Python codec for converting between a string of ASCII '
                     'and Unicode chars maintaining readability',
         long_description=open(join(base_dir, 'README.rst')).read(),
-        author='Kunal Parmar',
-        author_email='kunalparmar@gmail.com',
+        author=__author__,
+        author_email=__email__,
         url='https://github.com/box/rotunicode',
         license=open(join(base_dir, 'LICENSE')).read(),
         packages=find_packages(exclude=['test']),
