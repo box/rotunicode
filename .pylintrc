@@ -71,7 +71,7 @@ comment=no
 
 # Template used to display messages. This is a python new-style format string
 # used to format the massage information. See doc for all details
-#msg-template=
+msg-template={module}:{line}:{column}: [{msg_id}({symbol}), {obj}] {msg}
 
 
 [BASIC]
