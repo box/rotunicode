@@ -19,8 +19,8 @@ class RotUnicode(codecs.Codec):
     RotUnicode stands for rotate-to-unicode. Or rotten-unicode for those who
     have nightmares about Unicode. It was inspired by Rot13.
     """
-    # pylint: disable=W0232
-    # Disable: class has no __init__ method. The base class does not define it.
+    # pylint: disable=no-init
+    # The base class does not define it.
 
     _codec_name = 'rotunicode'
 
@@ -43,12 +43,12 @@ class RotUnicode(codecs.Codec):
         ),
     )
 
-    def encode(self, input, errors='strict'):
+    def encode(self, string, errors='strict'):
         """Return the encoded version of a string.
 
-        :param input:
+        :param string:
             The input string to encode.
-        :type input:
+        :type string:
             `basestring`
 
         :param errors:
@@ -61,22 +61,19 @@ class RotUnicode(codecs.Codec):
         :rtype:
             `tuple` (`unicode`, `int`)
         """
-        # pylint: disable=W0622
-        # Disable: redefining built-in 'input'
-
         if errors != 'strict':
             raise UnicodeError('Unsupported error handling {}'.format(errors))
 
-        unicode_input = self._ensure_unicode_string(input)
-        encoded = unicode_input.translate(self._encoding_table)
-        return encoded, len(input)
+        unicode_string = self._ensure_unicode_string(string)
+        encoded = unicode_string.translate(self._encoding_table)
+        return encoded, len(string)
 
-    def decode(self, input, errors='strict'):
+    def decode(self, string, errors='strict'):
         """Return the decoded version of a string.
 
-        :param input:
+        :param string:
             The input string to decode.
-        :type input:
+        :type string:
             `basestring`
 
         :param errors:
@@ -89,15 +86,12 @@ class RotUnicode(codecs.Codec):
         :rtype:
             `tuple` (`unicode`, `int`)
         """
-        # pylint: disable=W0622
-        # Disable: redefining built-in 'input'
-
         if errors != 'strict':
             raise UnicodeError('Unsupported error handling {}'.format(errors))
 
-        unicode_input = self._ensure_unicode_string(input)
-        decoded = unicode_input.translate(self._decoding_table)
-        return decoded, len(input)
+        unicode_string = self._ensure_unicode_string(string)
+        decoded = unicode_string.translate(self._decoding_table)
+        return decoded, len(string)
 
     @classmethod
     def search_function(cls, encoding):
