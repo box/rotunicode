@@ -72,6 +72,36 @@ To install, simply:
     $ pip install rotunicode
 
 
+Contribute
+----------
+
+Contributions are welcome and encouraged! The easiest way is to fork the repo
+and then make a pull request from your fork. Read `this
+<https://help.github.com/articles/fork-a-repo>`_ for help.
+
+
+Setup
+^^^^^
+
+Install packages using:
+
+.. code-block:: bash
+
+    $ pip install -r requirements-dev.txt
+
+
+Testing
+^^^^^^^
+
+Run all tests using:
+
+.. code-block:: bash
+
+    $ tox
+
+The tox tests include code style checks via pep8 and pylint.
+
+
 Why is this named RotUnicode?
 -----------------------------
 
