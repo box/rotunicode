@@ -75,23 +75,22 @@ To install, simply:
 Contribute
 ----------
 
-Contributions are welcome and encouraged! The easiest way is to fork the repo
-and then make a pull request from your fork. Read `this
-<https://help.github.com/articles/fork-a-repo>`_ for help.
+See `<https://github.com/box/rotunicode/CONTRIBUTING.rst>`_.
 
 
 Setup
-^^^^^
+~~~~~
 
-Install packages using:
+Create a virtual environment and install packages:
 
 .. code-block:: console
 
+    mkvirtualenv rotunicode
     pip install -r requirements-dev.txt
 
 
 Testing
-^^^^^^^
+~~~~~~~
 
 Run all tests using:
 
