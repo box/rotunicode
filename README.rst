@@ -75,7 +75,7 @@ To install, simply:
 Contribute
 ----------
 
-See `CONTRIBUTING <CONTRIBUTING.rst>`_.
+See `CONTRIBUTING <https://github.com/box/rotunicode/blob/master/CONTRIBUTING.rst>`_.
 
 
 Setup
