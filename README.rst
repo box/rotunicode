@@ -8,10 +8,10 @@ rotunicode
     :target: https://coveralls.io/r/box/rotunicode
 
 .. image:: https://pypip.in/v/rotunicode/badge.png
-    :target: https://crate.io/packages/rotunicode
+    :target: https://pypi.python.org/pypi/rotunicode
 
 .. image:: https://pypip.in/d/rotunicode/badge.png
-    :target: https://crate.io/packages/rotunicode
+    :target: https://pypi.python.org/pypi/rotunicode
 
 RotUnicode is a Python codec that can convert a string of ASCII characters to
 a Unicode string with non-ASCII characters maintaining readability.
