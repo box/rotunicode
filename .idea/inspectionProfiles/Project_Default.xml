@@ -5,6 +5,5 @@
     <inspection_tool class="PyMandatoryEncodingInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myEncodingFormatIndex" value="1" />
     </inspection_tool>
-    <inspection_tool class="PyRedeclarationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
   </profile>
 </component>
