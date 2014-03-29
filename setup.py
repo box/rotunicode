@@ -14,7 +14,7 @@ def main():
                     'and Unicode chars maintaining readability',
         long_description=open(join(base_dir, 'README.rst')).read(),
         author='Kunal Parmar',
-        author_email='kunalparmar@gmail.com',
+        author_email='oss@box.com',
         url='https://github.com/box/rotunicode',
         license=open(join(base_dir, 'LICENSE')).read(),
         packages=find_packages(exclude=['test']),
