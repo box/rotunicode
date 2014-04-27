@@ -4,9 +4,12 @@ from __future__ import unicode_literals
 import codecs
 from unittest import TestCase
 
+from box.test.genty import genty, genty_dataset
+from box.test.genty.genty_args import genty_args
 from box.util.rotunicode import RotUnicode, ruencode, rudecode
 
 
+@genty
 class RotUnicodeUtilsTest(TestCase):
     """Tests for :mod:`box.util.rotunicode.utils`."""
 
@@ -15,50 +18,28 @@ class RotUnicodeUtilsTest(TestCase):
         super(RotUnicodeUtilsTest, cls).setUpClass()
         codecs.register(RotUnicode.search_function)
 
-    def test_ruencode_encodes_string_with_no_extension_using_rotunicode(self):
+    @genty_dataset(
+        genty_args('plain', 'ҏľȁȉń'),
+        genty_args('plain', 'ҏľȁȉń', extension=False),
+        genty_args('.extension', '.ȅхƭȅńŝȉőń'),
+        genty_args('.extension', '.ȅхƭȅńŝȉőń', extension=False),
+        genty_args('plain.txt', 'ҏľȁȉń.txt'),
+        genty_args('plain.txt', 'ҏľȁȉń.txt', extension=False,),
+        genty_args('plain.txt', 'ҏľȁȉń.ƭхƭ', extension=True),
+        genty_args('two.ext.sions', 'ƭŵő.ȅхƭ.sions'),
+        genty_args('two.ext.sions', 'ƭŵő.ȅхƭ.sions', extension=False),
+        genty_args('two.ext.sions', 'ƭŵő.ȅхƭ.ŝȉőńŝ', extension=True),
+    )
+    def test_ruencode_encodes_string_with_no_extension_using_rotunicode(
+        self,
+        source,
+        target,
+        extension=None,
+    ):
+        encoded_source = ruencode(source) if extension is None else ruencode(source, extension=extension)
         self.assertEqual(
-            'ҏľȁȉń',
-            ruencode('plain'),
-        )
-        self.assertEqual(
-            'ҏľȁȉń',
-            ruencode('plain', extension=False),
-        )
-        self.assertEquals(
-            '.ȅхƭȅńŝȉőń',
-            ruencode('.extension'),
-        )
-        self.assertEquals(
-            '.ȅхƭȅńŝȉőń',
-            ruencode('.extension', extension=False),
-        )
-
-    def test_ruencode_encodes_string_skipping_extension_using_rotunicode(self):
-        self.assertEqual(
-            'ҏľȁȉń.txt',
-            ruencode('plain.txt'),
-        )
-        self.assertEqual(
-            'ҏľȁȉń.txt',
-            ruencode('plain.txt', extension=False),
-        )
-        self.assertEquals(
-            'ƭŵő.ȅхƭ.sions',
-            ruencode('two.ext.sions'),
-        )
-        self.assertEquals(
-            'ƭŵő.ȅхƭ.sions',
-            ruencode('two.ext.sions', extension=False),
-        )
-
-    def test_ruencode_encodes_string_including_extension_using_rotunicode(self):
-        self.assertEqual(
-            'ҏľȁȉń.ƭхƭ',
-            ruencode('plain.txt', extension=True),
-        )
-        self.assertEquals(
-            'ƭŵő.ȅхƭ.ŝȉőńŝ',
-            ruencode('two.ext.sions', extension=True),
+            target,
+            encoded_source,
         )
 
     def test_rudecode_decodes_string_using_rotunicode(self):
