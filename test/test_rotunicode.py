@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
-from box.test.genty import genty, genty_dataset
 import codecs
 from unittest import TestCase
 
+# pylint:disable=import-error,no-name-in-module
+from box.test.genty import genty, genty_dataset
+# pylint:enable=import-error,no-name-in-module
 from box.util.rotunicode import RotUnicode
 
 
