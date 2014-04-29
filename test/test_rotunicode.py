@@ -47,37 +47,29 @@ class RotUnicodeTest(TestCase):
             'Hello World!'.decode('rotunicode', error_type)
 
     @genty_dataset(
-        encode_zero_length_byte_string=(b'', str.encode, ''),
-        decode_zero_length_byte_string=(b'', str.decode, ''),
-        encode_zero_length_unicode_string=('', unicode.encode, ''),
-        decode_zero_length_unicode_string=('', unicode.decode, ''),
-        encode_byte_string=(b'Hello World!', str.encode, 'Ĥȅľľő Ŵőŕľď!'),
-        decode_byte_string=(b'Ĥȅľľő Ŵőŕľď!', str.decode, 'Hello World!'),
-        encode_unicode_string=('Hello World!', unicode.encode, 'Ĥȅľľő Ŵőŕľď!'),
-        decode_unicode_string=('Ĥȅľľő Ŵőŕľď!', unicode.decode, 'Hello World!'),
-        encode_byte_string_with_unsupported_chars=(
-            b'हेलो World!',
-            str.encode,
-            'हेलो Ŵőŕľď!',
-        ),
-        decode_byte_string_with_unsupported_chars=(
-            b'हेलो Ŵőŕľď!',
-            str.decode,
-            'हेलो World!',
-        ),
-        encode_unidcode_string_with_unsupported_chars=(
-            'हेलो World!',
-            unicode.encode,
-            'हेलो Ŵőŕľď!',
-        ),
-        decode_unicode_string_with_unsupported_chars=(
-            'हेलो Ŵőŕľď!',
-            unicode.decode,
-            'हेलो World!',
-        ),
+        zero_length_byte_string=(b'', ''),
+        zero_length_unicode_string=('', ''),
+        byte_string=(b'Hello World!', 'Ĥȅľľő Ŵőŕľď!'),
+        unicode_string=('Hello World!', 'Ĥȅľľő Ŵőŕľď!'),
+        byte_string_with_unsupported_chars=(b'हेलो World!', 'हेलो Ŵőŕľď!'),
+        unidcode_string_with_unsupported_chars=('हेलो World!', 'हेलो Ŵőŕľď!'),
     )
-    def test_operation_returns_correct_string(self, source, operation, target):
+    def test_encode_returns_correct_string(self, source, target):
         self.assertEqual(
             target,
-            operation(source, 'rotunicode'),
+            source.encode('rotunicode'),
+        )
+
+    @genty_dataset(
+        zero_length_byte_string=(b'', ''),
+        zero_length_unicode_string=('', ''),
+        byte_string=(b'Ĥȅľľő Ŵőŕľď!', 'Hello World!'),
+        unicode_string=('Ĥȅľľő Ŵőŕľď!', 'Hello World!'),
+        byte_string_with_unsupported_chars=(b'हेलो Ŵőŕľď!', 'हेलो World!'),
+        unicode_string_with_unsupported_chars=('हेलो Ŵőŕľď!', 'हेलो World!'),
+    )
+    def test_decode_returns_correct_string(self, source, target):
+        self.assertEqual(
+            target,
+            source.decode('rotunicode'),
         )

@@ -32,7 +32,7 @@ class RotUnicodeUtilsTest(TestCase):
         genty_args('two.ext.sions', 'ƭŵő.ȅхƭ.sions', extension=False),
         genty_args('two.ext.sions', 'ƭŵő.ȅхƭ.ŝȉőńŝ', extension=True),
     )
-    def test_ruencode_encodes_string_with_no_extension_using_rotunicode(
+    def test_ruencode_encodes_string_using_rotunicode(
         self,
         source,
         target,
