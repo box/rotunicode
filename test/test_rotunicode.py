@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import codecs
 from unittest import TestCase
 
-from box.util.rotunicode import RotUnicode
+from rotunicode import RotUnicode
 
 
 class RotUnicodeTest(TestCase):

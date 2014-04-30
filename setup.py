@@ -18,7 +18,6 @@ def main():
         url='https://github.com/box/rotunicode',
         license=open(join(base_dir, 'LICENSE')).read(),
         packages=find_packages(exclude=['test']),
-        namespace_packages=[b'box'],
         test_suite='test',
         zip_safe=False,
     )
