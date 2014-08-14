@@ -4,6 +4,10 @@ from __future__ import unicode_literals
 import codecs
 from genty import genty, genty_dataset, genty_args
 from unittest import TestCase
+if not hasattr(TestCase, 'setUpClass'):
+    # pylint:disable=import-error
+    from unittest2 import TestCase
+    # pylint:enable=import-error
 
 from rotunicode import RotUnicode, ruencode, rudecode
 

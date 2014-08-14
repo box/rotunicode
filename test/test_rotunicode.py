@@ -2,12 +2,12 @@
 
 from __future__ import unicode_literals
 import codecs
-from unittest import TestCase
 
 # pylint:disable=import-error,no-name-in-module
 from genty import genty, genty_dataset
 # pylint:enable=import-error,no-name-in-module
 from rotunicode import RotUnicode
+from test.test_utils import TestCase
 
 
 @genty

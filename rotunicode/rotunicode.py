@@ -2,7 +2,6 @@
 
 from __future__ import unicode_literals
 import codecs
-import strop
 
 
 class RotUnicode(codecs.Codec):
@@ -24,7 +23,9 @@ class RotUnicode(codecs.Codec):
 
     _codec_name = 'rotunicode'
 
-    _ascii_alphabet = strop.lowercase + strop.uppercase + '0123456789'
+    _lowercase = 'abcdefghijklmnopqrstuvwxyz'
+    _uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    _ascii_alphabet = _lowercase + _uppercase + '0123456789'
     _rot_unicode_alphabet = ('ȁƄćďȅƒġĥȉĵƙľḿńőҏqŕŝƭȕѵŵхŷż' +
                              'ȀβĆĎȄƑĜĤȈĴƘĽḾŃŐΡɊŔŜƬȔѴŴΧŶŻ' +
                              'Ꮎ➀➁➂➃➄➅➆➇➈')
@@ -43,7 +44,8 @@ class RotUnicode(codecs.Codec):
         ),
     )
 
-    def encode(self, string, errors='strict'):
+    @classmethod
+    def encode(cls, string, errors='strict'):
         """Return the encoded version of a string.
 
         :param string:
@@ -62,13 +64,14 @@ class RotUnicode(codecs.Codec):
             `tuple` (`unicode`, `int`)
         """
         if errors != 'strict':
-            raise UnicodeError('Unsupported error handling {}'.format(errors))
+            raise UnicodeError('Unsupported error handling {0}'.format(errors))
 
-        unicode_string = self._ensure_unicode_string(string)
-        encoded = unicode_string.translate(self._encoding_table)
+        unicode_string = cls._ensure_unicode_string(string)
+        encoded = unicode_string.translate(cls._encoding_table)
         return encoded, len(string)
 
-    def decode(self, string, errors='strict'):
+    @classmethod
+    def decode(cls, string, errors='strict'):
         """Return the decoded version of a string.
 
         :param string:
@@ -87,10 +90,10 @@ class RotUnicode(codecs.Codec):
             `tuple` (`unicode`, `int`)
         """
         if errors != 'strict':
-            raise UnicodeError('Unsupported error handling {}'.format(errors))
+            raise UnicodeError('Unsupported error handling {0}'.format(errors))
 
-        unicode_string = self._ensure_unicode_string(string)
-        decoded = unicode_string.translate(self._decoding_table)
+        unicode_string = cls._ensure_unicode_string(string)
+        decoded = unicode_string.translate(cls._decoding_table)
         return decoded, len(string)
 
     @classmethod
@@ -99,13 +102,13 @@ class RotUnicode(codecs.Codec):
         if encoding == cls._codec_name:
             return codecs.CodecInfo(
                 name=cls._codec_name,
-                encode=RotUnicode().encode,
-                decode=RotUnicode().decode,
+                encode=cls.encode,
+                decode=cls.decode,
             )
         return None
 
-    @classmethod
-    def _ensure_unicode_string(cls, string):
+    @staticmethod
+    def _ensure_unicode_string(string):
         """Returns a unicode string for string.
 
         :param string:
