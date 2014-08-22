@@ -33,11 +33,11 @@ class RotUnicodeUtilsTest(TestCase):
         genty_args('two.ext.sions', 'ƭŵő.ȅхƭ.ŝȉőńŝ', extension=True),
     )
     def test_ruencode_encodes_string_using_rotunicode(
-        self,
-        source,
-        target,
-        extension=None,
-    ):
+            self,
+            source,
+            target,
+            extension=None,
+        ):
         encoded_source = ruencode(source) if extension is None else ruencode(source, extension=extension)
         self.assertEqual(
             target,

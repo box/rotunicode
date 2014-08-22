@@ -32,17 +32,17 @@ class RotUnicodeTest(TestCase):
 
     @genty_dataset('ignore', 'replace', 'xmlcharrefreplace')
     def test_encoding_using_unsupported_error_types_raise_exception(
-        self,
-        error_type,
-    ):
+            self,
+            error_type,
+        ):
         with self.assertRaises(UnicodeError):
             'Hello World!'.encode('rotunicode', error_type)
 
     @genty_dataset('ignore', 'replace', 'xmlcharrefreplace')
     def test_decoding_using_unsupported_error_types_raise_exception(
-        self,
-        error_type
-    ):
+            self,
+            error_type
+        ):
         with self.assertRaises(UnicodeError):
             'Hello World!'.decode('rotunicode', error_type)
 
