@@ -37,7 +37,7 @@ class RotUnicodeUtilsTest(TestCase):
             source,
             target,
             extension=None,
-        ):
+    ):
         encoded_source = ruencode(source) if extension is None else ruencode(source, extension=extension)
         self.assertEqual(
             target,

@@ -34,7 +34,7 @@ class RotUnicodeTest(TestCase):
     def test_encoding_using_unsupported_error_types_raise_exception(
             self,
             error_type,
-        ):
+    ):
         with self.assertRaises(UnicodeError):
             'Hello World!'.encode('rotunicode', error_type)
 
@@ -42,7 +42,7 @@ class RotUnicodeTest(TestCase):
     def test_decoding_using_unsupported_error_types_raise_exception(
             self,
             error_type
-        ):
+    ):
         with self.assertRaises(UnicodeError):
             'Hello World!'.decode('rotunicode', error_type)
 
