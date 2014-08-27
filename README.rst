@@ -13,6 +13,22 @@ rotunicode
 .. image:: https://pypip.in/d/rotunicode/badge.png
     :target: https://pypi.python.org/pypi/rotunicode
 
+Upcoming Breaking Change!
+-------------------------
+
+When RotUnicode was released through version 0.3.0, it was released under the namespace
+box.util. In version 1.1.2, importing rotunicode became easier:
+.. code-block:: python
+    from rotunicode import RotUnicode
+vs.
+.. code-block:: python
+    from box.util.rotunicode import RotUnicode
+
+In version 2.0.0, however, you will no longer be able to import rotunicode from box.util.
+
+About
+-----
+
 RotUnicode is a Python codec that can convert a string of ASCII characters to
 a Unicode string with non-ASCII characters maintaining readability.
 

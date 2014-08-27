@@ -7,7 +7,7 @@ from unittest import TestCase
 # pylint:disable=import-error,no-name-in-module
 from box.test.genty import genty, genty_dataset
 # pylint:enable=import-error,no-name-in-module
-from box.util.rotunicode import RotUnicode
+from rotunicode import RotUnicode
 
 
 @genty

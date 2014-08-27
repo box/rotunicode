@@ -1,5 +1,5 @@
 coveralls
-genty
+genty==0.2.0
 pep8
 pylint
 tox
