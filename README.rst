@@ -18,9 +18,12 @@ Upcoming Breaking Change!
 
 When RotUnicode was released through version 0.3.0, it was released under the namespace
 box.util. In version 1.1.2, importing rotunicode became easier:
+
 .. code-block:: python
     from rotunicode import RotUnicode
+
 vs.
+
 .. code-block:: python
     from box.util.rotunicode import RotUnicode
 
