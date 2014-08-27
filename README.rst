@@ -40,7 +40,7 @@ a Unicode string with non-ASCII characters maintaining readability.
 .. code-block:: pycon
 
     >>> import codecs
-    >>> from box.util.rotunicode import RotUnicode
+    >>> from rotunicode import RotUnicode
     >>> codecs.register(RotUnicode.search_function)
     >>> 'Hello World!'.encode('rotunicode')
     Ĥȅľľő Ŵőŕľď!
