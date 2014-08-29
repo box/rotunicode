@@ -5,7 +5,7 @@ import codecs
 from unittest import TestCase
 
 # pylint:disable=import-error,no-name-in-module
-from box.test.genty import genty, genty_dataset
+from genty import genty, genty_dataset
 # pylint:enable=import-error,no-name-in-module
 from rotunicode import RotUnicode
 
