@@ -7,7 +7,7 @@ import strop
 
 class RotUnicode(codecs.Codec):
     """
-    Codec for converting between a string of ASCII and Unicode chars
+    Codec for converting between a string of ASCII and non-ASCII chars
     maintaining readability.
 
     >>> codes.register(RotUnicode.search_function)
