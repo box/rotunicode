@@ -145,7 +145,7 @@ characters is not practical. With RotUnicode, this is super easy:
 
 
 This is an example of a bug in Python
-(`issue18695 <http://bugs.python.org/issue18695>`) with non-ASCII characters -
+(`issue18695 <http://bugs.python.org/issue18695>`_) with non-ASCII characters -
 
 .. code-block:: pycon
 
