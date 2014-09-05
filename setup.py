@@ -11,7 +11,7 @@ def main():
         name='rotunicode',
         version='2.0.0',
         description='Python codec for converting between a string of ASCII '
-                    'and Unicode chars maintaining readability',
+                    'and non-ASCII chars maintaining readability',
         long_description=open(join(base_dir, 'README.rst')).read(),
         author='Kunal Parmar',
         author_email='oss@box.com',
