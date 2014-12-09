@@ -2,6 +2,16 @@
 
 from __future__ import unicode_literals
 from os.path import splitext
+import codecs
+
+from rotunicode import RotUnicode
+
+
+def register_codec():
+    try:
+        codecs.lookup('rotunicode')
+    except LookupError:
+        codecs.register(RotUnicode.search_function)
 
 
 def ruencode(string, extension=False):
@@ -24,6 +34,7 @@ def ruencode(string, extension=False):
     :rtype:
         `unicode`
     """
+    register_codec()
     if extension:
         file_name = string
         file_ext = ''
@@ -46,4 +57,5 @@ def rudecode(string):
     :rtype:
         `unicode`
     """
+    register_codec()
     return string.decode('rotunicode')
