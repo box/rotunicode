@@ -2,16 +2,11 @@
 
 from __future__ import unicode_literals
 from os.path import splitext
-import codecs
 
-from rotunicode import RotUnicode
+from .rotunicode import RotUnicode
 
 
-def register_codec():
-    try:
-        codecs.lookup('rotunicode')
-    except LookupError:
-        codecs.register(RotUnicode.search_function)
+_ROT_UNICODE = RotUnicode()
 
 
 def ruencode(string, extension=False):
@@ -34,14 +29,14 @@ def ruencode(string, extension=False):
     :rtype:
         `unicode`
     """
-    register_codec()
     if extension:
         file_name = string
         file_ext = ''
     else:
         file_name, file_ext = splitext(string)
 
-    return file_name.encode('rotunicode') + file_ext
+    encoded_value, _ = _ROT_UNICODE.encode(file_name)
+    return encoded_value + file_ext
 
 
 def rudecode(string):
@@ -57,5 +52,5 @@ def rudecode(string):
     :rtype:
         `unicode`
     """
-    register_codec()
-    return string.decode('rotunicode')
+    decoded_value, _ = _ROT_UNICODE.decode(string)
+    return decoded_value
