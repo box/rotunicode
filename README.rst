@@ -106,7 +106,7 @@ Installing RotUnicode also includes a command line tool.
     $ echo "Hello World!" > hello.txt
     $ rotunicode -f hello.txt
     Ĥȅľľő Ŵőŕľď!
-    cat hello.txt | rotunicode -f
+    $ cat hello.txt | rotunicode -f
     Ĥȅľľő Ŵőŕľď!
 
 
