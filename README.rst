@@ -92,6 +92,24 @@ there are a couple of shorthands.
     Hello World!
 
 
+Command Line
+------------
+
+Installing RotUnicode also includes a command line tool.
+
+.. code-block:: console
+
+    $ rotunicode "Hello World"
+    Ĥȅľľő Ŵőŕľď!
+    $ rotunicode -d "Ĥȅľľő Ŵőŕľď!"
+    Hello World!
+    $ echo "Hello World!" > hello.txt
+    $ rotunicode -f hello.txt
+    Ĥȅľľő Ŵőŕľď!
+    cat hello.txt | rotunicode -f
+    Ĥȅľľő Ŵőŕľď!
+
+
 Why should I use RotUnicode?
 ----------------------------
 
