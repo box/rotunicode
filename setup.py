@@ -23,8 +23,8 @@ def main():
         entry_points={
             'console_scripts': [
                 'rotunicode = rotunicode.console_scripts:main',
-            ]
-        }
+            ],
+        },
     )
 
 

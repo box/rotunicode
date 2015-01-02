@@ -3,16 +3,7 @@
 from __future__ import unicode_literals
 import argparse
 import sys
-from .utils import rudecode, ruencode
-
-
-def safe_unicode(data):
-    """ Helper to safely convert <string's> that contain unicode to unicode.
-    Otherwise argparse barfs. """
-    if isinstance(data, str):
-        return data.decode('utf-8')
-    else:
-        return unicode(data)
+from .utils import rudecode, ruencode, safe_unicode
 
 
 def main():
@@ -52,10 +43,12 @@ def main():
     if options.string:
         string = options.string
     elif options.file:
-        string = safe_unicode(options.file.read()).rstrip('\n')
+        string = safe_unicode(options.file.read()).rstrip('\n\r')
     else:
-        string = safe_unicode(sys.stdin.read()).rstrip('\n')
+        string = safe_unicode(sys.stdin.read()).rstrip('\n\r')
+    # Output bytes, not unicode. This is necessary if stdout is being piped
+    # to a stream that's expecting bytes to avoid UnicodeEncodeError.
     if options.decode:
-        print rudecode(string)
+        print rudecode(string).encode('utf-8')
     else:
         print ruencode(string).encode('utf-8')
