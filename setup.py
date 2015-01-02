@@ -20,6 +20,11 @@ def main():
         packages=find_packages(exclude=['test']),
         test_suite='test',
         zip_safe=False,
+        entry_points={
+            'console_scripts': [
+                'rotunicode = rotunicode.console_scripts:main',
+            ]
+        }
     )
 
 
