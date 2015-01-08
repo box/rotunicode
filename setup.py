@@ -9,7 +9,7 @@ def main():
     base_dir = dirname(__file__)
     setup(
         name='rotunicode',
-        version='2.0.0',
+        version='2.1.0',
         description='Python codec for converting between a string of ASCII '
                     'and non-ASCII chars maintaining readability',
         long_description=open(join(base_dir, 'README.rst')).read(),
