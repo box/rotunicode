@@ -34,7 +34,7 @@ def main():
         test_suite = 'unittest2.collector'
     setup(
         name='rotunicode',
-        version='2.0.0',
+        version='2.2.0',
         description='Python library for converting between a string of ASCII '
                     'and non-ASCII chars maintaining readability',
         long_description=open(join(base_dir, 'README.rst')).read(),
