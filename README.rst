@@ -14,7 +14,7 @@ rotunicode
     :target: https://pypi.python.org/pypi/rotunicode
 
 
-RotUnicode is a Python codec that can convert a string containing ASCII
+RotUnicode is a Python library that can convert a string containing ASCII
 characters to a string with non-ASCII characters without losing readability.
 
 .. code-block:: pycon
@@ -64,9 +64,21 @@ To install, simply:
 Use
 ---
 
-In order to use RotUnicode, first register it with the codecs library. This
-allows python to know what functions to call to encode or decode a string
-using RotUnicode.
+.. code-block:: pycon
+
+    >>> from rotunicode import ruencode
+    >>> ruencode('Hello World!')
+    Ĥȅľľő Ŵőŕľď!
+    >>> rudecode('Ĥȅľľő Ŵőŕľď!')
+    Hello World!
+
+
+As a Codec
+----------
+
+In Python 2, RotUnicode can also be used as a codec, but it must first
+be registered with the codecs library. This allows python to know what
+functions to call to encode or decode a string using RotUnicode.
 
 .. code-block:: pycon
 
@@ -75,21 +87,6 @@ using RotUnicode.
     >>> codecs.register(RotUnicode.search_function)
     >>> 'Hello World!'.encode('rotunicode')
     Ĥȅľľő Ŵőŕľď!
-
-
-Shorthand
----------
-
-To avoid the extraneous typing and enable IDE auto-completion to help you,
-there are a couple of shorthands.
-
-.. code-block:: pycon
-
-    >>> from rotunicode import ruencode
-    >>> ruencode('Hello World!')
-    Ĥȅľľő Ŵőŕľď!
-    >>> rudecode('Ĥȅľľő Ŵőŕľď!')
-    Hello World!
 
 
 Command Line

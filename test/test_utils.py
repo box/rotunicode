@@ -3,9 +3,9 @@
 from __future__ import unicode_literals
 import codecs
 from genty import genty, genty_dataset, genty_args
-from unittest import TestCase
 
 from rotunicode import RotUnicode, ruencode, rudecode
+from test.base_test_case import TestCase
 
 
 @genty
