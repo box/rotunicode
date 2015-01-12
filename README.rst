@@ -76,7 +76,7 @@ Use
 As a Codec
 ----------
 
-In Python 2, RotUnicode can also be registered as a codec, but it must first
+In Python 2, RotUnicode can also be used as a codec, but it must first
 be registered with the codecs library. This allows python to know what
 functions to call to encode or decode a string using RotUnicode.
 

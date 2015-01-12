@@ -35,10 +35,10 @@ def main():
     setup(
         name='rotunicode',
         version='2.0.0',
-        description='Python codec for converting between a string of ASCII '
+        description='Python library for converting between a string of ASCII '
                     'and non-ASCII chars maintaining readability',
         long_description=open(join(base_dir, 'README.rst')).read(),
-        author='Kunal Parmar',
+        author='Box',
         author_email='oss@box.com',
         url='https://github.com/box/rotunicode',
         license=open(join(base_dir, 'LICENSE')).read(),
