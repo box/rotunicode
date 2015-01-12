@@ -2,6 +2,7 @@
 
 from __future__ import unicode_literals
 import codecs
+import six
 
 
 class RotUnicode(codecs.Codec):
@@ -121,6 +122,6 @@ class RotUnicode(codecs.Codec):
         :rtype:
             `unicode`
         """
-        if not isinstance(string, unicode):
+        if not isinstance(string, six.text_type):
             string = string.decode('utf-8')
         return string

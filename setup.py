@@ -27,7 +27,7 @@ CLASSIFIERS = [
 
 def main():
     base_dir = dirname(__file__)
-    test_requirements = []
+    test_requirements = ['genty>=1.0.0']
     test_suite = 'test'
     if version_info[0] == 2 and version_info[1] == 6:
         test_requirements.append('unittest2')
@@ -43,7 +43,7 @@ def main():
         url='https://github.com/box/rotunicode',
         license=open(join(base_dir, 'LICENSE')).read(),
         packages=find_packages(exclude=['test']),
-        namespace_packages=['box'],
+        install_requires=['six'],
         tests_require=test_requirements,
         test_suite=test_suite,
         zip_safe=False,

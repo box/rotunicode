@@ -1,5 +1,6 @@
+-rrequirements.txt
 coveralls
-genty>=0.3.1
+genty>=1.0.0
 pep8
 pylint
 tox
