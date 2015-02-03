@@ -1,8 +1,10 @@
 # coding: utf-8
 
+from __future__ import print_function
 from __future__ import unicode_literals
 import argparse
 import sys
+
 from .utils import rudecode, ruencode, safe_unicode
 
 
@@ -49,6 +51,6 @@ def main():
     # Output bytes, not unicode. This is necessary if stdout is being piped
     # to a stream that's expecting bytes to avoid UnicodeEncodeError.
     if options.decode:
-        print rudecode(string).encode('utf-8')
+        print(rudecode(string).encode('utf-8'))
     else:
-        print ruencode(string).encode('utf-8')
+        print(ruencode(string).encode('utf-8'))
