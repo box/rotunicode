@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+from codecs import open
 from sys import version_info
 from setuptools import setup, find_packages
 from os.path import dirname, join
@@ -37,11 +38,11 @@ def main():
         version='2.2.0',
         description='Python library for converting between a string of ASCII '
                     'and non-ASCII chars maintaining readability',
-        long_description=open(join(base_dir, 'README.rst')).read(),
+        long_description=open(join(base_dir, 'README.rst'), encoding='utf-8').read(),
         author='Box',
         author_email='oss@box.com',
         url='https://github.com/box/rotunicode',
-        license=open(join(base_dir, 'LICENSE')).read(),
+        license=open(join(base_dir, 'LICENSE'), encoding='utf-8').read(),
         packages=find_packages(exclude=['test']),
         install_requires=['six'],
         tests_require=test_requirements,
