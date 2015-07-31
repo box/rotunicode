@@ -1,16 +1,19 @@
 rotunicode
 ==========
 
+.. image:: http://opensource.box.com/badges/active.svg
+    :target: http://opensource.box.com/badges
+
 .. image:: https://travis-ci.org/box/rotunicode.png?branch=master
     :target: https://travis-ci.org/box/rotunicode
 
 .. image:: https://coveralls.io/repos/box/rotunicode/badge.png
     :target: https://coveralls.io/r/box/rotunicode
 
-.. image:: https://pypip.in/v/rotunicode/badge.png
+.. image:: https://img.shields.io/pypi/v/rotunicode.svg
     :target: https://pypi.python.org/pypi/rotunicode
 
-.. image:: https://pypip.in/d/rotunicode/badge.png
+.. image:: https://img.shields.io/pypi/dm/rotunicode.svg
     :target: https://pypi.python.org/pypi/rotunicode
 
 
