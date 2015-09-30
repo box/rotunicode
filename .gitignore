@@ -1,3 +1,8 @@
+# Backup files
+*.~
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
 *.py[cod]
 
 # C extensions
@@ -14,20 +19,49 @@ bin
 var
 sdist
 develop-eggs
+.Python
+env/
+downloads/
 .installed.cfg
 lib
 lib64
+MANIFEST
+.eggs/
+.pyenv/
+.venv/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
 
 # Installer logs
 pip-log.txt
+pip-delete-this-directory.txt
 
 # Unit test / coverage reports
+htmlcov/
 .coverage
 .tox
+.cache
 nosetests.xml
+coverage.xml
+.coverage.*
+*,cover
 
 # Translations
 *.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
 
 # Mr Developer
 .mr.developer.cfg
@@ -35,8 +69,11 @@ nosetests.xml
 .pydevproject
 
 # IntelliJ
-.idea/tasks.xml
-.idea/workspace.xml
+.idea/
+*.iml
 
 # Mac noise
 .DS_Store
+
+# Misc
+tokens.pk
