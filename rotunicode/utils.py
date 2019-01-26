@@ -14,8 +14,8 @@ def safe_unicode(data):
     Otherwise argparse barfs. """
     if isinstance(data, str):
         return data.decode('utf-8')
-    else:
-        return unicode(data)
+
+    return unicode(data)
 
 
 def ruencode(string, extension=False):

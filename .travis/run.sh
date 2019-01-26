@@ -15,7 +15,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 else
     if [[ "${TOX_ENV}" == "pypy" ]]; then
         eval "$(pyenv init -)"
-        pyenv global pypy-2.6.0
+        pyenv global "pypy${PYPY_VERSION}"
     fi
 fi
 source $PWD/.venv/bin/activate

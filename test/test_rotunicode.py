@@ -1,15 +1,19 @@
 # coding: utf-8
 
 from __future__ import unicode_literals
+
 import codecs
+import platform
 
 # pylint:disable=import-error,no-name-in-module
 from genty import genty, genty_dataset
 # pylint:enable=import-error,no-name-in-module
-import platform
 import six
+
 from rotunicode import RotUnicode
+# pylint:disable=wrong-import-order
 from test.base_test_case import skipIf, TestCase
+# pylint:enable=wrong-import-order
 
 
 @genty

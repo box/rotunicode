@@ -1,11 +1,14 @@
 # coding: utf-8
 
 from __future__ import unicode_literals
+
 import codecs
 from genty import genty, genty_dataset, genty_args
 
 from rotunicode import RotUnicode, ruencode, rudecode
+# pylint:disable=wrong-import-order
 from test.base_test_case import TestCase
+# pylint:enable=wrong-import-order
 
 
 @genty

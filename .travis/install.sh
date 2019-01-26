@@ -23,17 +23,9 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
     fi
 
     case "${TOX_ENV}" in
-        py26)
-            curl -O https://bootstrap.pypa.io/get-pip.py
-            python get-pip.py --user
-            ;;
         py27)
             curl -O https://bootstrap.pypa.io/get-pip.py
             python get-pip.py --user
-            ;;
-        py33)
-            pyenv install 3.3.6
-            pyenv global 3.3.6
             ;;
         py34)
             pyenv install 3.4.2
@@ -43,20 +35,24 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
             pyenv install 3.5.0
             pyenv global 3.5.0
             ;;
+        py36)
+            pyenv install 3.6.0
+            pyenv global 3.6.0
+            ;;
         pypy)
-            pyenv install pypy-2.6.0
-            pyenv global pypy-2.6.0
+            pyenv install "pypy${PYPY_VERSION}"
+            pyenv global "pypy${PYPY_VERSION}"
             ;;
     esac
     pyenv rehash
     python -m pip install -U --user virtualenv
 else
-    # temporary pyenv installation to get pypy-2.6 before container infra upgrade
+    # temporary pyenv installation to get pypy before container infra upgrade
     if [[ "${TOX_ENV}" == "pypy" ]]; then
         git clone https://github.com/yyuu/pyenv.git $PWD/.pyenv
         eval "$(pyenv init -)"
-        pyenv install pypy-2.6.0
-        pyenv global pypy-2.6.0
+        pyenv install "pypy${PYPY_VERSION}"
+        pyenv global "pypy${PYPY_VERSION}"
     fi
     pip install -U virtualenv
 fi
