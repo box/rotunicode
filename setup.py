@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-from codecs import open
-from sys import version_info
-from setuptools import setup, find_packages
+from __future__ import absolute_import, unicode_literals
+
+from codecs import open   # pylint:disable=redefined-builtin
 from os.path import dirname, join
+
+from setuptools import setup, find_packages
 
 
 CLASSIFIERS = [
@@ -31,21 +32,23 @@ def main():
     base_dir = dirname(__file__)
     test_requirements = ['genty>=1.0.0']
     test_suite = 'test'
-    if version_info[0] == 2 and version_info[1] == 6:
-        test_requirements.append('unittest2')
-        test_suite = 'unittest2.collector'
+    with open(join(base_dir, 'README.rst'), encoding='utf-8') as readme_file:
+        long_description = readme_file.read()
     setup(
         name='rotunicode',
-        version='2.2.0',
+        version='2.3.0',
         description='Python library for converting between a string of ASCII '
                     'and non-ASCII chars maintaining readability',
-        long_description=open(join(base_dir, 'README.rst'), encoding='utf-8').read(),
+        long_description=long_description,
         author='Box',
         author_email='oss@box.com',
         url='https://github.com/box/rotunicode',
-        license=open(join(base_dir, 'LICENSE'), encoding='utf-8').read(),
+        license=(
+            'Apache Software License, Version 2.0, '
+            'http://www.apache.org/licenses/LICENSE-2.0'
+        ),
         packages=find_packages(exclude=['test']),
-        install_requires=['six'],
+        install_requires=['six>=1.9.0'],
         tests_require=test_requirements,
         test_suite=test_suite,
         zip_safe=False,

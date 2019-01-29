@@ -47,7 +47,7 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
     pyenv rehash
     python -m pip install -U --user virtualenv
 else
-    # temporary pyenv installation to get pypy before container infra upgrade
+    # pyenv installation to get specified pypy version (Travis may only have older version(s))
     if [[ "${TOX_ENV}" == "pypy" ]]; then
         git clone https://github.com/yyuu/pyenv.git $PWD/.pyenv
         eval "$(pyenv init -)"

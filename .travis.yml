@@ -27,9 +27,15 @@ matrix:
       sudo: true
     - python: 2.7
       env: TOX_ENV=pep8
+    - python: 3.6
+      env: TOX_ENV=pep8
     - python: 2.7
       env: TOX_ENV=pylint
+    - python: 3.6
+      env: TOX_ENV=pylint
     - python: 2.7
+      env: TOX_ENV=coverage
+    - python: 3.6
       env: TOX_ENV=coverage
 
 # commands to install dependencies
